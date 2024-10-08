@@ -181,5 +181,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Input files
+# Input/output files
 input_docs/
+output/
