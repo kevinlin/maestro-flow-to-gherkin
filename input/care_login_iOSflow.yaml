@@ -1,0 +1,29 @@
+appId: com.apple.mobilesafari
+---
+- launchApp:
+    clearState: true
+- tapOn: "Address"
+- inputText: "http://localhost:3000"
+#- inputText: "https://erbecare-dev.erbe-med.com/intro"
+- pressKey: Enter
+- runFlow:
+    when:
+      visible: "Enable accessibility"
+    commands:
+      - tapOn: "Enable accessibility"
+- tapOn: ".*Sign In.*"
+- assertVisible: "Login"
+- inputText:
+    text: "kevin.lin@zuhlke.com"
+    label: "Enter user email"
+- pressKey: Enter
+- assertVisible: ".*Sign in with your email address.*"
+- tapOn: Password
+- inputText:
+    text: "password"
+    label: "Enter user password"
+- pressKey: Enter
+- extendedWaitUntil:
+    visible: ".*Assets.*"
+    timeout: 10000
+- takeScreenshot: "ErbeCareIOS"

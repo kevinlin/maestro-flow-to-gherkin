@@ -1,0 +1,22 @@
+appId: com.erbe-med.emPOWER-Dev
+---
+- launchApp:
+    clearState: true
+- assertVisible: "Erbe emPower"
+- tapOn: "Sign In/Up"
+- assertVisible: "Login"
+- inputText:
+    text: "daniel.dang@zuhlke.com"
+    label: "Enter user email"
+- pressKey: Enter
+- assertVisible: ".*Sign in with your email address.*"
+- tapOn: Password
+- inputText:
+    text: "password"
+    label: "Enter user password"
+- pressKey: Enter
+- assertVisible: ".*Provide your encryption key.*"
+- tapOn: "Skip"
+- tapOn: "I understand"
+- assertVisible: "Number of Cases"
+- takeScreenshot: "loginIOS"
